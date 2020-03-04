@@ -34,3 +34,17 @@ mark.calculateAge();
 // this is not very common but Max wanted us to learn about this as well
 // John Jane and Mark will now all have the last name of Smith
 Person.prototype.lastName = 'Smith';
+
+var Historian = function(name, speciality, eraOFFocus) {
+  this.name = name;
+  this.speciality = speciality;
+  this.eraOFFocus = eraOFFocus;
+}
+
+var sarah = new Historian('Sarah', 'Reconstruction', 'Late 1800s');
+var lou = new Historian('Lou', 'Renaissance Architecture', 'Late 1600s');
+var lyndon = new Historian('Lyndon', 'JFK', 'Late 1960s');
+
+// console.log(sarah, lou, lyndon);
+
+console.log(sarah.speciality);
