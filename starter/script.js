@@ -25,6 +25,7 @@ Person.prototype.calculateAge = function() {
   console.log(2016 - this.yearOfBirth);
 }
 
+
 // Now test it.
 john.calculateAge();
 jane.calculateAge();
@@ -46,5 +47,3 @@ var lou = new Historian('Lou', 'Renaissance Architecture', 'Late 1600s');
 var lyndon = new Historian('Lyndon', 'JFK', 'Late 1960s');
 
 // console.log(sarah, lou, lyndon);
-
-console.log(sarah.speciality);
