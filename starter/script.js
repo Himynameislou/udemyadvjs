@@ -212,7 +212,6 @@ iceBreaker('playing ball')('Sarah');
 iceBreaker('blogging')('Lou');
 iceBreaker('blogging')('Lyndon');
 iceBreaker('dancing')('Carmela');
-*/
 
 /////////////////////////////////
 //Immediately Invoked Function Expressions (IIFE)
@@ -246,3 +245,4 @@ game();
 })(5);
 
 // console.log(score);
+*/
