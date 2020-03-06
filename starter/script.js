@@ -187,7 +187,6 @@ designerQuestion('Mark');
 designerQuestion('Mike');
 
 interviewQuestion('teacher')('Mark');
-*/
 
 
 // My own icebreaker
@@ -203,7 +202,7 @@ function iceBreaker(hobby) {
   } else {
     return function(name) {
       console.log(name + ', tell me what it is that you like to do on your free time');
-
+      
     }
   }
 }
@@ -213,3 +212,37 @@ iceBreaker('playing ball')('Sarah');
 iceBreaker('blogging')('Lou');
 iceBreaker('blogging')('Lyndon');
 iceBreaker('dancing')('Carmela');
+*/
+
+/////////////////////////////////
+//Immediately Invoked Function Expressions (IIFE)
+
+// One way to do this by using the skills we know
+
+function game() {
+  var score = Math.random() * 10;
+  console.log(score >= 5);
+}
+game();
+
+// The problem with the above code is that in this game we want it all to be private sooooo look below
+
+// IIFE
+
+(function() {
+  var score = Math.random() * 10;
+  console.log(score >= 5);
+})();
+
+// console.log(score);
+
+// Adding Good Luck to increase winning odds
+
+// we can always make it true
+
+(function(goodLuck) {
+  var score = Math.random() * 10;
+  console.log(score >= 5 - goodLuck);
+})(5);
+
+// console.log(score);
