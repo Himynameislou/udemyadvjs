@@ -1,10 +1,10 @@
-/*// Function Constructor
+/// Function Constructor
 
-// var john = {
-//   name: 'John',
-//   yearOfBirth: 1990,
-//   job: 'teacher'
-// };
+var john = {
+  name: 'John',
+  yearOfBirth: 1990,
+  job: 'teacher'
+};
 
 // Using Function Constructors to create a blueprint for more constructors
 // Convention is to use Capital letter not lowercase like i a variable
@@ -245,4 +245,26 @@ game();
 })(5);
 
 // console.log(score);
-*/
+
+
+//////////////////////////
+///Lecture: Closures
+
+
+function retirement(retirementAge) {
+  var a = ' years left until retirement.';
+  return function(yearOfBirth) {
+    var age = 2016-yearOfBirth;
+    console.log((retirementAge - age) + a);
+  }
+}
+
+var retirementUS = retirement(66);
+retirementUS(1990);
+// retirement(66)(1990);
+
+var retirementGermany = retirement(65);
+var retirementIceland = retirement(67);
+
+retirementGermany(1990);
+retirementIceland(1990);
