@@ -1,3 +1,4 @@
+/*
 /// Function Constructor
 
 var john = {
@@ -268,3 +269,70 @@ var retirementIceland = retirement(67);
 
 retirementGermany(1990);
 retirementIceland(1990);
+
+
+
+*/
+
+
+
+
+//////////////// Lecture: Bind, Call and Apply
+
+
+var john = {
+  name: 'John',
+  age: 26,
+  job: 'teacher',
+  presentation: function(style, timeOfDay) {
+    if (style === 'formal') {
+      console.log('Good ' + timeOfDay + ', Ladies and gentleman! I\'m ' + this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old.');
+    } else if (style === 'friendly') {
+      console.log('Hey, what\'s up? I\'m ' + this.name + ', I\'m ' + this.job + ' and I\'m ' + this.age + ' years old. ' + 'Have a nice ' + timeOfDay + '.');
+    }
+  }
+};
+
+//Using a new object. Emily.  That does not have the presentation method.  So we use the Call Method
+
+var emily = {
+  name: 'Emily',
+  age: 35,
+  job: 'designer'
+};
+
+// Call Method Below
+john.presentation.call(emily, 'friendly', 'afternoon');
+
+var lou = {
+  name: 'Lou',
+  age: 36,
+  job: 'freelance designer/philosopher'
+}
+
+john.presentation.call(lou, 'formal', 'evening');
+john.presentation.call(lou, 'friendly', 'afternoon');
+
+john.presentation('formal', 'morning');
+john.presentation('formal', 'evening');
+john.presentation('friendly', 'morning');
+john.presentation('friendly', 'evening');
+
+//Apply Method to current example
+
+// john.presentation.apply(emily, [])
+// For this example it does work for us bc our method isnt using arrays.  But we will use it in a further example
+
+// Bind Method
+
+var johnFriendly = john.presentation.bind(john, 'friendly');
+
+johnFriendly('morning');
+johnFriendly('evening');
+
+var emilyFormal = john.presentation.bind(emily, 'formal');
+
+emilyFormal('afternoon');
+
+var louFriendly = john.presentation.bind(lou, 'friendly');
+louFriendly('morning');
